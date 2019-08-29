@@ -8,3 +8,7 @@ permalink: /about/
 ### 福建話
 
 逐家好！我是王順傑。我這馬佇加州大學洛杉磯分校學語言學佮電腦科學。有閒，請汝來阮兜遮！我自2019年秋季學期會開始佇華盛頓大學讀計算語言學碩士項目。
+
+### Education
+M.S., Computational Linguistics, University of Washington, expected 2020.
+B.A., Linguistics and Computer Science, University of California, Los Angeles, 2019
