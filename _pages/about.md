@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Computational Linguist
+subtitle: 王顺杰 [ʋɑ̌ŋ.ʂu̯ɤ̂n.t͡ɕi̯ě]
 
 profile:
   align: right
