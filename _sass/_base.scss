@@ -4,7 +4,11 @@
 
 // Typography
 
-p,
+p {
+  color: var(--global-text-color);
+  font-family: 'Noto Sans', sans-serif;
+}
+
 h1,
 h2,
 h3,
