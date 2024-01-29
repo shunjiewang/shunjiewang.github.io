@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: 王顺杰 [ʋɑ̌ŋ.ʂu̯ɤ̂n.t͡ɕi̯ě]
+subtitle: 王顺杰 [ʋɑŋ³⁵.ʂuɤn⁵¹.tɕie³⁵]
 
 profile:
   align: right
