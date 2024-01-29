@@ -4,11 +4,7 @@
 
 // Typography
 
-p {
-  color: var(--global-text-color);
-  font-family: 'Noto Sans', sans-serif;
-}
-
+p
 h1,
 h2,
 h3,
@@ -21,6 +17,7 @@ li,
 span,
 strong {
   color: var(--global-text-color);
+  font-family: 'Noto Sans', sans-serif;
 }
 
 hr {
