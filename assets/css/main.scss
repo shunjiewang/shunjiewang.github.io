@@ -23,3 +23,16 @@ $max-content-width: {{ site.max_width }};
   "tabler-icons/tabler-icons-filled.scss",
   "tabler-icons/tabler-icons-outline.scss"
 ;
+
+/* Custom Typography: Barlow ExtraBold 800 Small Caps */
+.navbar-brand,
+.navbar-brand b,
+.navbar-brand strong,
+.post-header .post-title,
+.profile .name {
+  font-family: 'Barlow', sans-serif !important;
+  font-weight: 800 !important;
+  font-variant: small-caps;
+  text-transform: lowercase;
+  letter-spacing: 0.04em;
+}
