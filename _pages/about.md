@@ -24,6 +24,6 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am a PhD student in Linguistics at University of Michigan. My research interests lie in the intersection of theoretical linguistics, formal languages and automata theory, and current advances in NLP. Specifically, I leverage formal languages to study the Transformer's expressiveness and inductive biases.
+I am a PhD student in [Linguistics](https://lsa.umich.edu/linguistics) and [Scientific Computing](https://micde.umich.edu/academic-programs/phd-in-scientific-computing/) at University of Michigan. My research interests lie in the intersection of theoretical linguistics, formal languages and automata theory, and current advances in NLP. Specifically, I leverage formal languages to study the Transformer's expressiveness and inductive biases.
 
-Previously, I received my MS in Computational Linguistics from University of Washington, where I worked with [Shane Steinert-Threlkeld](https://linguistics.washington.edu/people/shane-steinert-threlkeld) in the [CLMBR](https://clmbr.shane.st) lab. I received my BA in Linguistics & Computer Science from UCLA.
+Previously, I did my MS in Computational Linguistics at University of Washington, where I worked with [Shane Steinert-Threlkeld](https://linguistics.washington.edu/people/shane-steinert-threlkeld) in the [CLMBR](https://clmbr.shane.st) lab. I received my BA in Linguistics & Computer Science from UCLA.
