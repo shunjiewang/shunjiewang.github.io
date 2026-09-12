@@ -24,7 +24,40 @@ $max-content-width: {{ site.max_width }};
   "tabler-icons/tabler-icons-outline.scss"
 ;
 
-/* Custom Typography: Optical-Matched Barlow Small Caps */
+/* ==========================================================================
+   1. Base & Global Typography Hierarchy
+   ========================================================================== */
+
+/* Body baseline set to 400 (Regular) */
+body {
+  font-weight: 400 !important;
+}
+
+/* Page headers (Publications, Projects, etc.) held at 300 (Light) */
+.post-header .post-title,
+.page-title {
+  font-weight: 300 !important;
+}
+
+/* Explicitly bind strong emphasis and bold utilities to 600 (SemiBold) */
+b,
+strong,
+th,
+.font-weight-bold,
+.font-weight-bolder,
+.publications b,
+.publications strong,
+.bibliography b,
+.bibliography strong {
+  font-weight: 600 !important;
+  font-synthesis-weight: none !important;
+  font-synthesis: none !important;
+}
+
+/* ==========================================================================
+   2. Custom Typography: Optical-Matched Barlow Small Caps
+   ========================================================================== */
+
 .name-wrapper,
 .name-wrapper * {
   font-family: 'Barlow', sans-serif !important;
@@ -33,30 +66,99 @@ $max-content-width: {{ site.max_width }};
   letter-spacing: 0.02em !important;
 }
 
-/* 1. Boost the size of the whole wrapper to make the small caps larger */
+/* Boost wrapper size by 10% to enlarge small caps */
 .name-wrapper {
-  font-size: 1.15em !important; /* Boosts everything by 15% */
+  font-size: 1.1em !important; 
 }
 
-/* 2. Shrink the initial capital letters back down so they don't look massive */
+/* Inverse optical shrink (1 / 1.1 ≈ 0.91) to keep initial caps baseline-proportional */
 .name-wrapper .cap {
   font-weight: 700 !important;
-  font-size: 0.87em !important; /* Math: 1 / 1.15 keeps the cap at its original baseline size */
+  font-size: 0.91em !important; 
 }
 
-/* Specific kerning adjustment for the 'W' in the last name */
+/* Standard kerning adjustment for the 'W' (About page / general context) */
 .name-wrapper .kern-w {
   margin-right: -0.08em !important; 
 }
 
-/* 3. Enlarge the name globally on the About page */
+/* Enlarge name on About page header while inheriting small caps proportions */
 .post-title .name-wrapper {
-  /* This overrides the 1.15em above for the About page, keeping the exact same proportions but making everything bigger */
   font-size: 1.5em !important; 
   display: inline-block;
 }
 
-/* Specific kerning for the 'W' exclusively in the navigation bar */
+/* ==========================================================================
+   3. Navbar Layout & Fixed Height Locks (56px)
+   ========================================================================== */
+
+/* Lock container height and eliminate padding shifts */
+#navbar,
+nav.navbar {
+  height: 56px !important;
+  min-height: 56px !important;
+  max-height: 56px !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+#navbar > .container,
+#navbar > .container-fluid {
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* Lock brand container bounds while scaling the name up to 1.4rem */
+.navbar-brand {
+  display: inline-flex !important;
+  align-items: center !important;
+  height: 100% !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  line-height: 1 !important;
+  font-size: 1.32rem !important; /* Base scaling boost for navbar name */
+}
+
+/* Preserve the 10% small-caps optical ratio within the enlarged navbar brand */
+.navbar-brand .name-wrapper {
+  font-size: 1.14em !important;
+  line-height: 1 !important;
+}
+
+.navbar-brand .name-wrapper .cap {
+  font-size: 0.88em !important;
+}
+
+/* Tighter kerning between W and A exclusively inside the navbar */
 .navbar-brand .name-wrapper .kern-w {
-  margin-right: -0.15em !important; /* Tweak this value (e.g., -0.10em to -0.15em) as needed */
+  margin-right: -0.15em !important;
+}
+
+/* Lock nav links to prevent vertical expansion */
+.navbar-nav .nav-link {
+  display: flex !important;
+  align-items: center !important;
+  height: 100% !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  line-height: 1 !important;
+}
+
+/* ==========================================================================
+   4. Navbar Weight Differentiation & Optical Stability
+   ========================================================================== */
+
+/* Unhighlighted navbar items stay at 400 (Regular) */
+.navbar-nav .nav-item .nav-link,
+.navbar-nav .dropdown-item {
+  font-weight: 400 !important;
+}
+
+/* Active/highlighted item elevated to 500 (Medium) */
+.navbar-nav .nav-item.active > .nav-link,
+.navbar-nav .nav-link.active,
+.navbar-nav .dropdown-item.active {
+  font-weight: 500 !important;
+  letter-spacing: -0.01em; /* Compensates for 500-weight width expansion to prevent horizontal jitter */
 }
