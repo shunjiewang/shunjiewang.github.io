@@ -5,17 +5,19 @@
       {% if page.permalink != '/' %}
         <a class="navbar-brand title font-weight-lighter" href="{{ site.baseurl }}/">
           {% if site.title == 'blank' %}
-            {% if site.first_name %}
-              <span class="font-weight-bold">
-                {{- site.first_name -}}
-              </span>
-            {% endif %}
-            {% if site.middle_name %}
-              {{- site.middle_name -}}
-            {% endif %}
-            {% if site.last_name %}
-              {{- site.last_name -}}
-            {% endif %}
+            <!-- START CUSTOM TYPOGRAPHY WRAPPER -->
+            <span class="name-wrapper">
+              {% if site.first_name %}
+                <span class="cap">{{ site.first_name | slice: 0 }}</span>{{ site.first_name | slice: 1, 50 }}
+              {% endif %}
+              {% if site.middle_name %}
+                 <span class="cap">{{ site.middle_name | slice: 0 }}</span>{{ site.middle_name | slice: 1, 50 }}
+              {% endif %}
+              {% if site.last_name %}
+                 <span class="cap">{{ site.last_name | slice: 0 }}</span>{{ site.last_name | slice: 1, 50 }}
+              {% endif %}
+            </span>
+            <!-- END CUSTOM TYPOGRAPHY WRAPPER -->
           {% else %}
             {{- site.title -}}
           {% endif %}

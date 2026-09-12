@@ -24,15 +24,39 @@ $max-content-width: {{ site.max_width }};
   "tabler-icons/tabler-icons-outline.scss"
 ;
 
-/* Custom Typography: Barlow ExtraBold 800 Small Caps */
-.navbar-brand,
-.navbar-brand b,
-.navbar-brand strong,
-.post-header .post-title,
-.profile .name {
+/* Custom Typography: Optical-Matched Barlow Small Caps */
+.name-wrapper,
+.name-wrapper * {
   font-family: 'Barlow', sans-serif !important;
-  font-weight: 800 !important;
-  font-variant: small-caps;
-  text-transform: lowercase;
-  letter-spacing: 0.04em;
+  font-weight: 800 !important; 
+  font-variant: small-caps !important;
+  letter-spacing: 0.02em !important;
+}
+
+/* 1. Boost the size of the whole wrapper to make the small caps larger */
+.name-wrapper {
+  font-size: 1.15em !important; /* Boosts everything by 15% */
+}
+
+/* 2. Shrink the initial capital letters back down so they don't look massive */
+.name-wrapper .cap {
+  font-weight: 700 !important;
+  font-size: 0.87em !important; /* Math: 1 / 1.15 keeps the cap at its original baseline size */
+}
+
+/* Specific kerning adjustment for the 'W' in the last name */
+.name-wrapper .kern-w {
+  margin-right: -0.08em !important; 
+}
+
+/* 3. Enlarge the name globally on the About page */
+.post-title .name-wrapper {
+  /* This overrides the 1.15em above for the About page, keeping the exact same proportions but making everything bigger */
+  font-size: 1.5em !important; 
+  display: inline-block;
+}
+
+/* Specific kerning for the 'W' exclusively in the navigation bar */
+.navbar-brand .name-wrapper .kern-w {
+  margin-right: -0.15em !important; /* Tweak this value (e.g., -0.10em to -0.15em) as needed */
 }

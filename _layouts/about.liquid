@@ -5,8 +5,19 @@ layout: default
   <header class="post-header">
     <h1 class="post-title">
       {% if site.title == 'blank' %}
-        <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
-        {{ site.last_name }}
+        <!-- START CUSTOM TYPOGRAPHY WRAPPER -->
+        <span class="name-wrapper">
+          {% if site.first_name %}
+            <span class="cap">{{ site.first_name | slice: 0 }}</span>{{ site.first_name | slice: 1, 50 }}
+          {% endif %}
+          {% if site.middle_name %}
+             <span class="cap">{{ site.middle_name | slice: 0 }}</span>{{ site.middle_name | slice: 1, 50 }}
+          {% endif %}
+          {% if site.last_name %}
+             <span class="cap kern-w">{{ site.last_name | slice: 0 }}</span>{{ site.last_name | slice: 1, 50 }}
+          {% endif %}
+        </span>
+        <!-- END CUSTOM TYPOGRAPHY WRAPPER -->
       {% else %}
         {{ site.title }}
       {% endif %}
@@ -22,11 +33,9 @@ layout: default
           {% if page.profile.image_circular %}
             {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
           {% else %}
-            {% assign profile_image_class = 'img-fluid z-depth-1
-      rounded' %}
+            {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
           {% endif %}
-          {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px)
-      30vw, 95vw"{% endcapture %}
+          {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px) 30vw, 95vw"{% endcapture %}
           {%
             include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
             cache_bust=true
